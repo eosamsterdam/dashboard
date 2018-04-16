@@ -8,7 +8,7 @@ task :build => "resources/public/js/compiled/app.js"
 
 task :commit => :build do
    sh %[git add --all resources]
-   sh %[git commit -m "gh-pages build commit"]
+   sh %[git commit -m "gh-pages build commit" || true]
 end
 
 # http://clontz.org/blog/2014/05/08/git-subtree-push-for-deployment/
