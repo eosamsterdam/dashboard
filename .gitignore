@@ -2,3 +2,5 @@
 /target
 /*-init.clj
 out
+.lein-repl-history
+.nrepl-port
