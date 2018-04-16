@@ -11,8 +11,10 @@ task :commit => :build do
    sh %[git commit -m "gh-pages build commit"]
 end
 
+# http://clontz.org/blog/2014/05/08/git-subtree-push-for-deployment/
 task :ship => :commit do
-   sh %[git subtree push --prefix resources/public origin gh-pages]
+   #sh %[git subtree push --prefix resources/public origin gh-pages]
+   sh %[git push origin `git subtree split --prefix resources/public master`:gh-pages --force]
 end
 
 task :open do
