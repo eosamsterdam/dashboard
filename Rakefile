@@ -1,7 +1,7 @@
 
-file "resources/public/js/compiled/app.js" => FileList["src/**.cljs"] do
+file "resources/public/js/compiled/app.js" => FileList["project.clj", "src/**.cljs"] do
   sh %[lein clean]
-  sh %[lein cljsbuild once min]
+  sh %[lein do cljsbuild once min, less once]
 end
 
 task :build => "resources/public/js/compiled/app.js"
